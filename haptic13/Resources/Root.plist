@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>items</key>
+	<array>
+		<dict>
+			<key>cell</key>
+			<string>PSGroupCell</string>
+			<key>label</key>
+			<string>Haptic13 Settings</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSSwitchCell</string>
+			<key>default</key>
+			<true/>
+			<key>defaults</key>
+			<string>org.brandonplank.haptic13</string>
+			<key>key</key>
+			<string>HapticEnabled</string>
+			<key>label</key>
+			<string>Enabled</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSGroupCell</string>
+			<key>label</key>
+			<string>Haptic Strength</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSSegmentCell</string>
+			<key>default</key>
+			<integer>0</integer>
+			<key>defaults</key>
+			<string>org.brandonplank.haptic13</string>
+			<key>key</key>
+			<string>HapticStrength</string>
+			<key>validValues</key>
+			<array>
+				<integer>0</integer>
+				<integer>1</integer>
+				<integer>2</integer>
+				<integer>3</integer>
+				<integer>4</integer>
+			</array>
+			<key>validTitles</key>
+			<array>
+				<string>Light</string>
+				<string>Medium</string>
+				<string>Heavy</string>
+				<string>Rigid</string>
+				<string>Soft</string>
+			</array>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSGroupCell</string>
+			<key>label</key>
+			<string>Individual Settings</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSSwitchCell</string>
+			<key>default</key>
+			<true/>
+			<key>defaults</key>
+			<string>org.brandonplank.haptic13</string>
+			<key>key</key>
+			<string>HapticIconHaptics</string>
+			<key>label</key>
+			<string>Icon Haptics</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSSwitchCell</string>
+			<key>default</key>
+			<true/>
+			<key>defaults</key>
+			<string>org.brandonplank.haptic13</string>
+			<key>key</key>
+			<string>HapticKeyboardHaptics</string>
+			<key>label</key>
+			<string>Keyboard Haptics</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSSwitchCell</string>
+			<key>default</key>
+			<true/>
+			<key>defaults</key>
+			<string>org.brandonplank.haptic13</string>
+			<key>key</key>
+			<string>HapticTabBarHaptics</string>
+			<key>label</key>
+			<string>Tab Bar Haptics</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSSwitchCell</string>
+			<key>default</key>
+			<true/>
+			<key>defaults</key>
+			<string>org.brandonplank.haptic13</string>
+			<key>key</key>
+			<string>HapticSwitcherHaptics</string>
+			<key>label</key>
+			<string>App Switcher Haptics</string>
+		</dict>
+
+		<dict>
+			<key>cell</key>
+			<string>PSGroupCell</string>
+			<key>label</key>
+			<string>App settings</string>
+		</dict>
+
+		<dict>
+        	<key>cell</key>
+        	<string>PSButtonCell</string>
+        	<key>label</key>
+        	<string>Select apps to blacklist</string>
+        	<key>action</key>
+        	<string>selectExcludeApps</string>
+    	</dict>
+			<dict>
+				<key>cell</key>
+				<string>PSGroupCell</string>
+				<key>label</key>
+				<string>Developer</string>
+			</dict>
+			<dict>
+				<key>big</key>
+				<true/>
+				<key>cellClass</key>
+				<string>HBTwitterCell</string>
+				<key>label</key>
+				<string>Brandon Plank</string>
+				<key>user</key>
+				<string>_bplank</string>
+			</dict>
+			<dict>
+				<key>cell</key>
+				<string>PSGroupCell</string>
+			</dict>
+			<dict>
+        		<key>cell</key>
+        		<string>PSButtonCell</string>
+        		<key>label</key>
+        		<string>Donate ☺️</string>
+        		<key>action</key>
+        		<string>donate</string>
+    		</dict>
+				<dict>
+				<key>cell</key>
+				<string>PSGroupCell</string>
+				<key>label</key>
+				<string>People who helped me on the way</string>
+			</dict>
+			<dict>
+				<key>big</key>
+				<true/>
+				<key>cellClass</key>
+				<string>HBTwitterCell</string>
+				<key>label</key>
+				<string>Jacob Clayden</string>
+				<key>user</key>
+				<string>jcxdev</string>
+			</dict>
+			<dict>
+				<key>big</key>
+				<true/>
+				<key>cellClass</key>
+				<string>HBTwitterCell</string>
+				<key>label</key>
+				<string>renai</string>
+				<key>user</key>
+				<string>Renaitare</string>
+			</dict>
+			<dict>
+				<key>big</key>
+				<true/>
+				<key>cellClass</key>
+				<string>HBTwitterCell</string>
+				<key>label</key>
+				<string>TylerD3V</string>
+				<key>user</key>
+				<string>TylerD3V</string>
+			</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSGroupCell</string>
+			<key>label</key>
+			<string>Copyright 2020 (c) Brandon Plank</string>
+		</dict>
+	</array>
+	<key>title</key>
+	<string>Haptic13</string>
+</dict>
+</plist>
