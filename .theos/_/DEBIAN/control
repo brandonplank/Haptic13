@@ -1,0 +1,10 @@
+Package: org.brandonplank.haptic13
+Name: Haptic13
+Depends: mobilesubstrate, ws.hbang.common (>= 1.11), com.spark.libsparkapplist (>= 1.0.8)
+Architecture: iphoneos-arm
+Description: Puts haptics in places apple should have!
+Maintainer: Brandon Plank
+Author: Brandon Plank
+Section: Tweaks
+Version: 0.6
+Installed-Size: 284

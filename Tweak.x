@@ -171,6 +171,9 @@ void hapticWithBool(BOOL theBool){
 }
 %end
 
+/*
+	This does not work yet :(
+*/
 %hook SBCoverSheetPrimarySlidingViewController
 -(void)grabberTongueBeganPulling:(id)arg1 withDistance:(double)arg2 andVelocity:(double)arg3 {
 	%orig(arg1, arg2, arg3);
