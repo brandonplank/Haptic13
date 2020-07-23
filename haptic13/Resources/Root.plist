@@ -21,6 +21,8 @@
 			<string>HapticEnabled</string>
 			<key>label</key>
 			<string>Enabled</string>
+			<key>PostNotification</key>
+			<string>org.brandonplank.haptic13/ReloadPreferences</string>
 		</dict>
 		<dict>
 			<key>cell</key>
@@ -53,6 +55,8 @@
 				<string>Rigid</string>
 				<string>Soft</string>
 			</array>
+			<key>PostNotification</key>
+			<string>org.brandonplank.haptic13/ReloadPreferences</string>
 		</dict>
 		<dict>
 			<key>cell</key>
@@ -71,6 +75,8 @@
 			<string>HapticIconHaptics</string>
 			<key>label</key>
 			<string>Icon Haptics</string>
+			<key>PostNotification</key>
+			<string>org.brandonplank.haptic13/ReloadPreferences</string>
 		</dict>
 		<dict>
 			<key>cell</key>
@@ -83,6 +89,8 @@
 			<string>HapticKeyboardHaptics</string>
 			<key>label</key>
 			<string>Keyboard Haptics</string>
+			<key>PostNotification</key>
+			<string>org.brandonplank.haptic13/ReloadPreferences</string>
 		</dict>
 		<dict>
 			<key>cell</key>
@@ -95,6 +103,8 @@
 			<string>HapticTabBarHaptics</string>
 			<key>label</key>
 			<string>Tab Bar Haptics</string>
+			<key>PostNotification</key>
+			<string>org.brandonplank.haptic13/ReloadPreferences</string>
 		</dict>
 		<dict>
 			<key>cell</key>
@@ -107,6 +117,8 @@
 			<string>HapticSwitcherHaptics</string>
 			<key>label</key>
 			<string>App Switcher Haptics</string>
+			<key>PostNotification</key>
+			<string>org.brandonplank.haptic13/ReloadPreferences</string>
 		</dict>
 		<dict>
 			<key>cell</key>
@@ -119,6 +131,8 @@
 			<string>HapticPassHaptics</string>
 			<key>label</key>
 			<string>Passcode Haptics</string>
+			<key>PostNotification</key>
+			<string>org.brandonplank.haptic13/ReloadPreferences</string>
 		</dict>
 		<dict>
 			<key>cell</key>
@@ -131,6 +145,8 @@
 			<string>HapticTableHaptics</string>
 			<key>label</key>
 			<string>Table View Haptics</string>
+			<key>PostNotification</key>
+			<string>org.brandonplank.haptic13/ReloadPreferences</string>
 		</dict>
 		<dict>
 			<key>cell</key>
@@ -143,6 +159,8 @@
 			<string>HapticScreenshotHaptics</string>
 			<key>label</key>
 			<string>Screenshot Haptics</string>
+			<key>PostNotification</key>
+			<string>org.brandonplank.haptic13/ReloadPreferences</string>
 		</dict>
 		<dict>
 			<key>cell</key>
@@ -155,6 +173,8 @@
 			<string>HapticVolumeHaptics</string>
 			<key>label</key>
 			<string>Volume Haptics</string>
+			<key>PostNotification</key>
+			<string>org.brandonplank.haptic13/ReloadPreferences</string>
 		</dict>
 		<dict>
 			<key>cell</key>
@@ -167,19 +187,9 @@
 			<string>HapticCCHaptics</string>
 			<key>label</key>
 			<string>Control Center Haptics</string>
-		</dict>
-		<dict>
-			<key>cell</key>
-			<string>PSSwitchCell</string>
-			<key>default</key>
-			<true/>
-			<key>defaults</key>
-			<string>org.brandonplank.haptic13</string>
-			<key>key</key>
-			<string>HapticNotiViewHaptics</string>
-			<key>label</key>
-			<string>Notification View Haptics</string>
-		</dict>
+			<key>PostNotification</key>
+			<string>org.brandonplank.haptic13/ReloadPreferences</string>
+		</dict>																																										
 		<dict>
 			<key>cell</key>
 			<string>PSGroupCell</string>
@@ -194,6 +204,8 @@
         	<string>Select apps to blacklist</string>
         	<key>action</key>
         	<string>selectExcludeApps</string>
+			<key>PostNotification</key>
+			<string>org.brandonplank.haptic13/ReloadPreferences</string>
     	</dict>
 			<dict>
 				<key>cell</key>
@@ -270,6 +282,16 @@
 				<string>Samg_is_a_Ninja</string>
 				<key>user</key>
 				<string>samg_is_a_ninja</string>
+			</dict>
+			<dict>
+				<key>big</key>
+				<true/>
+				<key>cellClass</key>
+				<string>HBTwitterCell</string>
+				<key>label</key>
+				<string>Conor</string>
+				<key>user</key>
+				<string>conorthedev</string>
 			</dict>
 		<dict>
 			<key>cell</key>

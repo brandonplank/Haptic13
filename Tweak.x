@@ -5,9 +5,9 @@
 #import <substrate.h>
 #import "Haptics.h"
 #import "SparkAppList.h"
+#import "Tweak.h"
 
 BOOL canLoadInto = false;
-NSDictionary* prefs = nil;
 static bool Enabled;
 static bool IconHaptics;
 static bool TabBarHaptics;
@@ -24,23 +24,25 @@ static bool NotiViewHaptics;
 NSInteger stregnth = 0; // 0 - Light, 1 - Medium, 2 - Heavy, 3 - Rigid, 4 - Soft
 
 void hapticWithBool(BOOL theBool){
-	if (canLoadInto){
-		if (Enabled){
-			if (theBool){
-				if (stregnth == 0){
-					[Haptics generateFeedback:FeedbackType_Impact_Light];
-				} else if (stregnth == 1){
-					[Haptics generateFeedback:FeedbackType_Impact_Medium];
-				} else if (stregnth == 2){
-					[Haptics generateFeedback:FeedbackType_Impact_Heavy];
-				} else if (stregnth == 3){
-					[Haptics generateFeedback:FeedbackType_Impact_Rigid];
-				} else if (stregnth == 4){
-					[Haptics generateFeedback:FeedbackType_Impact_Soft];
+	dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+    	if (canLoadInto){
+			if (Enabled){
+				if (theBool){
+					if (stregnth == 0){
+						[Haptics generateFeedback:FeedbackType_Impact_Light];
+					} else if (stregnth == 1){
+						[Haptics generateFeedback:FeedbackType_Impact_Medium];
+					} else if (stregnth == 2){
+						[Haptics generateFeedback:FeedbackType_Impact_Heavy];
+					} else if (stregnth == 3){
+						[Haptics generateFeedback:FeedbackType_Impact_Rigid];
+					} else if (stregnth == 4){
+						[Haptics generateFeedback:FeedbackType_Impact_Soft];
+					}
 				}
-			}
-		}	
-	}
+			}	
+		}
+	});
 }
 
 %hook UIKeyboardLayoutStar
@@ -182,31 +184,36 @@ void hapticWithBool(BOOL theBool){
 }
 %end
 
+void ReloadPrefs() {
+	prefs = [[HBPreferences alloc] initWithIdentifier:@"org.brandonplank.haptic13"];
+	if (!prefs){
+		NSLog(@"[haptic13] ummmmm no prefs???");
+	}
+	Enabled = [([prefs objectForKey:@"HapticEnabled"] ?: @(YES)) boolValue];
+	IconHaptics = [([prefs objectForKey:@"HapticIconHaptics"] ?: @(YES)) boolValue];
+	TabBarHaptics = [([prefs objectForKey:@"HapticTabBarHaptics"] ?: @(YES)) boolValue];
+	KeyboardHaptics = [([prefs objectForKey:@"HapticKeyboardHaptics"] ?: @(YES)) boolValue];
+	SwitcherHaptics = [([prefs objectForKey:@"HapticSwitcherHaptics"] ?: @(YES)) boolValue];
+	PassHaptics = [([prefs objectForKey:@"HapticPassHaptics"] ?: @(YES)) boolValue];
+	TableHaptics = [([prefs objectForKey:@"HapticTableHaptics"] ?: @(YES)) boolValue];
+	ScreenshotHaptics = [([prefs objectForKey:@"HapticScreenshotHaptics"] ?: @(YES)) boolValue];
+	VolumeHaptics = [([prefs objectForKey:@"HapticVolumeHaptics"] ?: @(YES)) boolValue];
+	CCHaptics = [([prefs objectForKey:@"HapticCCHaptics"] ?: @(YES)) boolValue];
+	NotiViewHaptics = [([prefs objectForKey:@"HapticNotiViewHaptics"] ?: @(YES)) boolValue];
+	stregnth = [[prefs objectForKey:@"HapticStrength"] floatValue];
+}
+
 %ctor{
 	if ([[[[NSProcessInfo processInfo] arguments] objectAtIndex:0] containsString:@"SpringBoard.app"] || [[[[NSProcessInfo processInfo] arguments] objectAtIndex:0] containsString:@"/Application"]){
-        NSLog(@"[haptic13] We loading into %@", [[[NSProcessInfo processInfo] arguments] objectAtIndex:0]);
-		HBPreferences *prefs = [[HBPreferences alloc] initWithIdentifier:@"org.brandonplank.haptic13"];
-		if (!prefs){
-			NSLog(@"[haptic13] ummmmm no prefs???");
-		}
+        //NSLog(@"[haptic13] We loading into %@", [[[NSProcessInfo processInfo] arguments] objectAtIndex:0]);
 		NSString* bundleIdentifier = [[NSBundle mainBundle] bundleIdentifier];
-		if ([[[[NSProcessInfo processInfo] arguments] objectAtIndex:0] containsString:@"SpringBoard.app"]){
-			canLoadInto = true;
-		}
-    	if(![SparkAppList doesIdentifier:@"org.brandonplank.haptic13" andKey:@"excludedApps" containBundleIdentifier:bundleIdentifier]){
+    	if(![SparkAppList doesIdentifier:@"org.brandonplank.haptic13" andKey:@"excludedApps" containBundleIdentifier:bundleIdentifier] || [[[[NSProcessInfo processInfo] arguments] objectAtIndex:0] containsString:@"SpringBoard.app"]){
         	canLoadInto = true;
     	}
-		Enabled = [([prefs objectForKey:@"HapticEnabled"] ?: @(YES)) boolValue];
-		IconHaptics = [([prefs objectForKey:@"HapticIconHaptics"] ?: @(YES)) boolValue];
-		TabBarHaptics = [([prefs objectForKey:@"HapticTabBarHaptics"] ?: @(YES)) boolValue];
-		KeyboardHaptics = [([prefs objectForKey:@"HapticKeyboardHaptics"] ?: @(YES)) boolValue];
-		SwitcherHaptics = [([prefs objectForKey:@"HapticSwitcherHaptics"] ?: @(YES)) boolValue];
-		PassHaptics = [([prefs objectForKey:@"HapticPassHaptics"] ?: @(YES)) boolValue];
-		TableHaptics = [([prefs objectForKey:@"HapticTableHaptics"] ?: @(YES)) boolValue];
-		ScreenshotHaptics = [([prefs objectForKey:@"HapticScreenshotHaptics"] ?: @(YES)) boolValue];
-		VolumeHaptics = [([prefs objectForKey:@"HapticVolumeHaptics"] ?: @(YES)) boolValue];
-		CCHaptics = [([prefs objectForKey:@"HapticCCHaptics"] ?: @(YES)) boolValue];
-		NotiViewHaptics = [([prefs objectForKey:@"HapticNotiViewHaptics"] ?: @(YES)) boolValue];
-		stregnth = [[prefs objectForKey:@"HapticStrength"] floatValue];
-    } 
+		if (canLoadInto) {
+			ReloadPrefs();
+			CFNotificationCenterAddObserver(CFNotificationCenterGetDarwinNotifyCenter(), NULL, (CFNotificationCallback)ReloadPrefs, CFSTR("org.brandonplank.haptic13/ReloadPreferences"), NULL, kNilOptions);
+		}
+	    %init;
+	} 
 }
