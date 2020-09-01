@@ -37,7 +37,7 @@
 		CFNotificationCenterPostNotification(CFNotificationCenterGetDarwinNotifyCenter(), CFSTR("org.brandonplank.haptic13/ReloadPreferences"), NULL, NULL, TRUE); 
 	}
 	-(void)donate{
-		[[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://www.cash.app/$brandonleeplank"]];
+		[[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://www.paypal.me/bplank03"]];
 	}
 	- (void)switchToggled:(UISwitch *)sender {
     	[([prefs objectForKey:@"HapticEnabled"] ?: @(YES)) boolValue];

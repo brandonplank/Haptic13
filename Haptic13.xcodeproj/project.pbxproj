@@ -1,0 +1,165 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXFileReference section */
+		888B7BE224FE00ED00BDE9C8 /* .DS_Store */ = {isa = PBXFileReference; lastKnownFileType = file; path = .DS_Store; sourceTree = "<group>"; };
+		888B7BE324FE00ED00BDE9C8 /* .git */ = {isa = PBXFileReference; lastKnownFileType = folder; path = .git; sourceTree = "<group>"; };
+		888B7BE424FE00ED00BDE9C8 /* .theos */ = {isa = PBXFileReference; lastKnownFileType = folder; path = .theos; sourceTree = "<group>"; };
+		888B7BE524FE00ED00BDE9C8 /* control */ = {isa = PBXFileReference; lastKnownFileType = text; path = control; sourceTree = "<group>"; };
+		888B7BE624FE00ED00BDE9C8 /* haptic13 */ = {isa = PBXFileReference; lastKnownFileType = folder; path = haptic13; sourceTree = "<group>"; };
+		888B7BE724FE00ED00BDE9C8 /* Haptic13.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Haptic13.plist; sourceTree = "<group>"; };
+		888B7BE824FE00ED00BDE9C8 /* Haptics.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Haptics.h; sourceTree = "<group>"; };
+		888B7BE924FE00ED00BDE9C8 /* Haptics.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Haptics.m; sourceTree = "<group>"; };
+		888B7BEA24FE00ED00BDE9C8 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		888B7BEB24FE00ED00BDE9C8 /* Makefile */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = "<group>"; };
+		888B7BEC24FE00ED00BDE9C8 /* packages */ = {isa = PBXFileReference; lastKnownFileType = folder; path = packages; sourceTree = "<group>"; };
+		888B7BED24FE00ED00BDE9C8 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		888B7BEE24FE00ED00BDE9C8 /* Tweak.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Tweak.h; sourceTree = "<group>"; };
+		888B7BEF24FE00ED00BDE9C8 /* Tweak.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Tweak.m; sourceTree = "<group>"; };
+		888B7BF024FE00ED00BDE9C8 /* Tweak.x */ = {isa = PBXFileReference; lastKnownFileType = text; path = Tweak.x; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		888B7BDC24FE00ED00BDE9C8 = {
+			isa = PBXGroup;
+			children = (
+				888B7BE224FE00ED00BDE9C8 /* .DS_Store */,
+				888B7BE324FE00ED00BDE9C8 /* .git */,
+				888B7BE424FE00ED00BDE9C8 /* .theos */,
+				888B7BE524FE00ED00BDE9C8 /* control */,
+				888B7BE624FE00ED00BDE9C8 /* haptic13 */,
+				888B7BE724FE00ED00BDE9C8 /* Haptic13.plist */,
+				888B7BE824FE00ED00BDE9C8 /* Haptics.h */,
+				888B7BE924FE00ED00BDE9C8 /* Haptics.m */,
+				888B7BEA24FE00ED00BDE9C8 /* LICENSE */,
+				888B7BEB24FE00ED00BDE9C8 /* Makefile */,
+				888B7BEC24FE00ED00BDE9C8 /* packages */,
+				888B7BED24FE00ED00BDE9C8 /* README.md */,
+				888B7BEE24FE00ED00BDE9C8 /* Tweak.h */,
+				888B7BEF24FE00ED00BDE9C8 /* Tweak.m */,
+				888B7BF024FE00ED00BDE9C8 /* Tweak.x */,
+			);
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXLegacyTarget section */
+		888B7BE124FE00ED00BDE9C8 /* Haptic13 */ = {
+			isa = PBXLegacyTarget;
+			buildArgumentsString = "$(ACTION)";
+			buildConfigurationList = 888B7BF124FE00ED00BDE9C8 /* Build configuration list for PBXLegacyTarget "Haptic13" */;
+			buildPhases = (
+			);
+			buildToolPath = /usr/bin/make;
+			buildWorkingDirectory = /Users/brandonplank/Desktop/Projects/Haptic13;
+			dependencies = (
+			);
+			name = Haptic13;
+			passBuildSettingsInEnvironment = 1;
+			productName = Haptic13;
+		};
+/* End PBXLegacyTarget section */
+
+/* Begin PBXProject section */
+		888B7BDD24FE00ED00BDE9C8 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+			};
+			buildConfigurationList = 888B7BE024FE00ED00BDE9C8 /* Build configuration list for PBXProject "Haptic13" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 888B7BDC24FE00ED00BDE9C8;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				888B7BE124FE00ED00BDE9C8 /* Haptic13 */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin XCBuildConfiguration section */
+		888B7BDE24FE00ED00BDE9C8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				COPY_PHASE_STRIP = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx10.6;
+			};
+			name = Debug;
+		};
+		888B7BDF24FE00ED00BDE9C8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				COPY_PHASE_STRIP = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				SDKROOT = macosx10.6;
+			};
+			name = Release;
+		};
+		888B7BF224FE00ED00BDE9C8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				DEBUGGING_SYMBOLS = YES;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "";
+				PRODUCT_NAME = Haptic13;
+			};
+			name = Debug;
+		};
+		888B7BF324FE00ED00BDE9C8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "";
+				PRODUCT_NAME = Haptic13;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		888B7BE024FE00ED00BDE9C8 /* Build configuration list for PBXProject "Haptic13" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				888B7BDE24FE00ED00BDE9C8 /* Debug */,
+				888B7BDF24FE00ED00BDE9C8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		888B7BF124FE00ED00BDE9C8 /* Build configuration list for PBXLegacyTarget "Haptic13" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				888B7BF224FE00ED00BDE9C8 /* Debug */,
+				888B7BF324FE00ED00BDE9C8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 888B7BDD24FE00ED00BDE9C8 /* Project object */;
+}

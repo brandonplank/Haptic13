@@ -24,25 +24,27 @@ static bool NotiViewHaptics;
 NSInteger stregnth = 0; // 0 - Light, 1 - Medium, 2 - Heavy, 3 - Rigid, 4 - Soft
 
 void hapticWithBool(BOOL theBool){
-	dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-    	if (canLoadInto){
-			if (Enabled){
-				if (theBool){
-					if (stregnth == 0){
-						[Haptics generateFeedback:FeedbackType_Impact_Light];
-					} else if (stregnth == 1){
-						[Haptics generateFeedback:FeedbackType_Impact_Medium];
-					} else if (stregnth == 2){
-						[Haptics generateFeedback:FeedbackType_Impact_Heavy];
-					} else if (stregnth == 3){
-						[Haptics generateFeedback:FeedbackType_Impact_Rigid];
-					} else if (stregnth == 4){
-						[Haptics generateFeedback:FeedbackType_Impact_Soft];
-					}
-				}
-			}	
-		}
-	});
+    @autoreleasepool {
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+            if (canLoadInto){
+                if (Enabled){
+                    if (theBool){
+                        if (stregnth == 0){
+                            [Haptics generateFeedback:FeedbackType_Impact_Light];
+                        } else if (stregnth == 1){
+                            [Haptics generateFeedback:FeedbackType_Impact_Medium];
+                        } else if (stregnth == 2){
+                            [Haptics generateFeedback:FeedbackType_Impact_Heavy];
+                        } else if (stregnth == 3){
+                            [Haptics generateFeedback:FeedbackType_Impact_Rigid];
+                        } else if (stregnth == 4){
+                            [Haptics generateFeedback:FeedbackType_Impact_Soft];
+                        }
+                    }
+                }
+            }
+        });
+    }
 }
 
 %hook UIKeyboardLayoutStar
@@ -204,16 +206,18 @@ void ReloadPrefs() {
 }
 
 %ctor{
-	if ([[[[NSProcessInfo processInfo] arguments] objectAtIndex:0] containsString:@"SpringBoard.app"] || [[[[NSProcessInfo processInfo] arguments] objectAtIndex:0] containsString:@"/Application"]){
-        //NSLog(@"[haptic13] We loading into %@", [[[NSProcessInfo processInfo] arguments] objectAtIndex:0]);
-		NSString* bundleIdentifier = [[NSBundle mainBundle] bundleIdentifier];
-    	if(![SparkAppList doesIdentifier:@"org.brandonplank.haptic13" andKey:@"excludedApps" containBundleIdentifier:bundleIdentifier] || [[[[NSProcessInfo processInfo] arguments] objectAtIndex:0] containsString:@"SpringBoard.app"]){
-        	canLoadInto = true;
-    	}
-		if (canLoadInto) {
-			ReloadPrefs();
-			CFNotificationCenterAddObserver(CFNotificationCenterGetDarwinNotifyCenter(), NULL, (CFNotificationCallback)ReloadPrefs, CFSTR("org.brandonplank.haptic13/ReloadPreferences"), NULL, kNilOptions);
-		}
-	    %init;
-	} 
+	@autoreleasepool {
+        if ([[[[NSProcessInfo processInfo] arguments] objectAtIndex:0] containsString:@"SpringBoard.app"] || [[[[NSProcessInfo processInfo] arguments] objectAtIndex:0] containsString:@"/Application"]){
+            //NSLog(@"[haptic13] We loading into %@", [[[NSProcessInfo processInfo] arguments] objectAtIndex:0]);
+            NSString* bundleIdentifier = [[NSBundle mainBundle] bundleIdentifier];
+            if(![SparkAppList doesIdentifier:@"org.brandonplank.haptic13" andKey:@"excludedApps" containBundleIdentifier:bundleIdentifier] || [[[[NSProcessInfo processInfo] arguments] objectAtIndex:0] containsString:@"SpringBoard.app"]){
+                canLoadInto = true;
+            }
+            if (canLoadInto) {
+                ReloadPrefs();
+                CFNotificationCenterAddObserver(CFNotificationCenterGetDarwinNotifyCenter(), NULL, (CFNotificationCallback)ReloadPrefs, CFSTR("org.brandonplank.haptic13/ReloadPreferences"), NULL, kNilOptions);
+            }
+            %init;
+        }
+	}
 }
